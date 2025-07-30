@@ -1,13 +1,13 @@
 package core.basesyntax;
 
-public abstract class Figure implements Drawable{
+public abstract class Figure implements Drawable, Calculable_Area {
     String figureType;
     String color;
     Figure(String figureType, String color) {
         this.figureType = figureType;
         this.color = color;
     }
-    abstract double getArea();
+
     abstract String[] getProperties();
     @Override
     public void draw() {
