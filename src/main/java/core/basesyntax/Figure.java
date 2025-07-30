@@ -1,7 +1,5 @@
 package core.basesyntax;
 
-import java.util.Arrays;
-
 public abstract class Figure implements Drawable{
     String figureType;
     String color;
