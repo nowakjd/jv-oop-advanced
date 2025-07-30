@@ -1,6 +1,6 @@
 package core.basesyntax;
 
-public class IsoscelesTrapezoid extends Figure {
+public class IsoscelesTrapezoid extends Figure implements Calculable_Area {
     private final double firstBase;
     private final double secondBase;
     private final double height;
@@ -18,7 +18,21 @@ public class IsoscelesTrapezoid extends Figure {
     }
 
     @Override
-    String[] getProperties() {
+    public void draw() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Figure: ")
+                .append(figureType).append(", ")
+                .append("area: ")
+                .append(getArea())
+                .append(" square units, ");
+        for (String property : getProperties()) {
+            stringBuilder.append(property).append(" ");
+        }
+        stringBuilder.append("color: ").append(color);
+        System.out.println(stringBuilder.toString());
+    }
+
+    private String[] getProperties() {
         return new String[]{
                 "first base: " + firstBase + " units",
                 "second base: " + secondBase + " units",
